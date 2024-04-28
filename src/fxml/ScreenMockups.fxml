@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox fx:controller="your.package.ScreenMockupsController"
+      xmlns:fx="http://javafx.com/fxml/1" spacing="10">
+    <Label text="Screen Mockups for Drone Dispatch System" />
+    <HBox spacing="5">
+        <Button text="Button" fx:id="actionButton" onAction="#handleActionButton"/>
+        <Button text="Cancel" fx:id="cancelButton" onAction="#handleCancelButton"/>
+    </HBox>
+    <TextField fx:id="usernameTextField" promptText="uname (Pre-populated information)"/>
+    <TextField fx:id="parameterTextField" promptText="uname (Type params here)"/>
+</VBox>
