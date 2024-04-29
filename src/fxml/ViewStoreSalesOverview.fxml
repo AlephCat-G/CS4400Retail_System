@@ -13,4 +13,32 @@
                     <PropertyValueFactory property="storeId" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="columnSname" text="Store Name" minWidth="200
+            <TableColumn fx:id="columnSname" text="Store Name" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sname" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnManager" text="Manager" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="manager" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnRevenue" text="Revenue" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="revenue" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnIncomingRevenue" text="Incoming Revenue" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="incomingRevenue" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnIncomingOrders" text="Incoming Orders" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="incomingOrders" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Cancel" minWidth="100" onAction="#handleCancel" />
+</VBox>
