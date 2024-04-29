@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewsRelatedTasksController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 10;">
+    <Label text="View Reports" style="-fx-font-size: 24px;" />
+    <Button text="Role Distribution" minWidth="200" onAction="#handleRoleDistribution" />
+    <Button text="Customer Credit Check" minWidth="200" onAction="#handleCustomerCreditCheck" />
+    <Button text="Drone Traffic Control" minWidth="200" onAction="#handleDroneTrafficControl" />
+    <Button text="Most Popular Products" minWidth="200" onAction="#handleMostPopularProducts" />
+    <Button text="Drone Pilot Roster" minWidth="200" onAction="#handleDronePilotRoster" />
+    <Button text="Store Sales Overview" minWidth="200" onAction="#handleStoreSalesOverview" />
+    <Button text="Orders In Progress" minWidth="200" onAction="#handleOrdersInProgress" />
+    <Button text="Cancel" minWidth="200" onAction="#handleCancel"/>
+</VBox>
