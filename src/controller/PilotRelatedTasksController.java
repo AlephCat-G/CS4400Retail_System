@@ -1,8 +1,7 @@
 package controller;
 import application.Main;
 import javafx.fxml.FXML;
-
-public class PilotsRelatedTasksController {
+public class PilotRelatedTasksController {
     @FXML
     private void handleAddDronePilot() throws Exception {
         System.out.println("Attempting to add a drone pilot...");
