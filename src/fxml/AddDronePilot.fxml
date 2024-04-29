@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:controller="controller.AddDronePilotController" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="TOP_CENTER">
+    <Label text="Procedure: Add Drone Pilot" style="-fx-font-size: 20;" />
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfUsername" promptText="username" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="First Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfFirstName" promptText="first_name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Last Name:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfLastName" promptText="last_name" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfAddress" promptText="address" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Birthdate:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="tfBirthdate" promptText="birthdate (YYYY-MM-DD)" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Tax ID:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="tfTaxID" promptText="taxID" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Service:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="tfService" promptText="service" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Salary:" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <TextField fx:id="tfSalary" promptText="salary" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+        <Label text="License ID:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfLicenseID" promptText="licenseID" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Experience:" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+        <TextField fx:id="tfExperience" promptText="experience" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+    </GridPane>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Cancel" fx:id="btnCancel" onAction="#handleCancel"/>
+        <Button text="Add" fx:id="btnAdd" onAction="#handleAddDronePilot"/>
+    </HBox>
+</VBox>

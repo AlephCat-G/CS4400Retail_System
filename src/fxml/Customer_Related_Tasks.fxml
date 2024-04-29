@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRelatedTasksController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 10;">
+    <Label text="Customer-Related Tasks" style="-fx-font-size: 24px;" />
+    <Button text="Add Customer" minWidth="200" onAction="#handleAddCustomer" />
+    <Button text="Increase Customer Credits" minWidth="200" onAction="#handleIncreaseCredits" />
+    <Button text="View Customer Credit Check" minWidth="200" onAction="#handleViewCreditCheck" />
+    <Button text="Remove Customer" minWidth="200" onAction="#handleRemoveCustomer" />
+    <Button text="Cancel" minWidth="200" onAction="#handleCancel"/>
+</VBox>

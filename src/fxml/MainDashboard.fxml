@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<VBox fx:controller="your.package.MainDashboardController"
-      xmlns:fx="http://javafx.com/fxml/1" spacing="10">
-    <Button text="Customers" fx:id="customersButton" onAction="#handleCustomers"/>
-    <Button text="Products" fx:id="productsButton" onAction="#handleProducts"/>
-    <Button text="Drones" fx:id="dronesButton" onAction="#handleDrones"/>
-    <Button text="Pilots" fx:id="pilotsButton" onAction="#handlePilots"/>
-    <Button text="Orders" fx:id="ordersButton" onAction="#handleOrders"/>
-    <Button text="Views" fx:id="viewsButton" onAction="#handleViews"/>
-</VBox>
+<GridPane fx:controller="controller.MainDashboardController"
+          xmlns:fx="http://javafx.com/fxml/1"
+          alignment="CENTER"
+          hgap="10"
+          vgap="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="50" hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+
+    <Button text="Customers" fx:id="customersButton" onAction="#handleCustomersAction" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Button text="Products" fx:id="productsButton" onAction="#handleProductsAction" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button text="Drones" fx:id="dronesButton" onAction="#handleDronesAction" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Button text="Pilots" fx:id="pilotsButton" onAction="#handlePilotsAction" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="Orders" fx:id="ordersButton" onAction="#handleOrdersAction" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <Button text="Views" fx:id="viewsButton" onAction="#handleViewsAction" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+</GridPane>

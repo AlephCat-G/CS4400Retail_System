@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SwapDroneControlController" prefHeight="200.0" prefWidth="300.0">
+    <VBox spacing="10" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20">
+        <Label text="Swap Drone Control" style="-fx-font-size: 16;" />
+        <TextField fx:id="tfIncomingPilot" promptText="Incoming Pilot"/>
+        <TextField fx:id="tfOutgoingPilot" promptText="Outgoing Pilot"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Confirm" onAction="#handleConfirm"/>
+            <Button text="Cancel" onAction="#handleCancel"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
+

@@ -18,9 +18,9 @@ public class DatabaseConnector {
         connectionProps.put("user", DATABASE_USER);
         connectionProps.put("password", DATABASE_PASSWORD);
 
-        // Enable SSL if needed
-        connectionProps.put("useSSL", "true");
-        connectionProps.put("verifyServerCertificate", "true");
+        // Set additional properties
+        connectionProps.put("useSSL", "false"); // If you have already disabled SSL
+        connectionProps.put("allowPublicKeyRetrieval", "true");
 
         // Register MySQL JDBC driver
         try {
@@ -35,6 +35,21 @@ public class DatabaseConnector {
         System.out.println("Connection to MySQL database successful!");
 
         return conn;
+    }
+
+
+    public static void main(String[] args) {
+        try {
+            Connection connection = DatabaseConnector.getConnection();
+            if (connection != null) {
+                System.out.println("Connection successful!");
+                // Optionally, you can close the connection here or in finally block
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Connection failed: " + e.getMessage());
+        }
     }
 
     // Remove the closeConnection method if each method handles its own connection closing
