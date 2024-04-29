@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerCreditCheckController" spacing="10" alignment="TOP_CENTER">
+    <TableView fx:id="tableCustomerCredit" editable="false">
+        <columns>
+            <TableColumn fx:id="columnCustomerName" text="Customer Name" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnRating" text="Rating" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rating" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnCurrentCredit" text="Current Credit" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="currentCredit" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnCreditAllocated" text="Credit Allocated" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="creditAllocated" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Cancel" minWidth="100" onAction="#handleCancel" />
+</VBox>

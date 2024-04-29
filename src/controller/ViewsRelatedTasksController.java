@@ -12,7 +12,7 @@ public class ViewsRelatedTasksController {
     @FXML
     private void handleCustomerCreditCheck() throws Exception {
         System.out.println("Attempting to view customer credit check...");
-        Main.switchToView("/fxml/ViewCustomerCreditCheck.fxml");
+        Main.switchToView("/fxml/CustomerCreditCheckView.fxml");
     }
 
     @FXML
