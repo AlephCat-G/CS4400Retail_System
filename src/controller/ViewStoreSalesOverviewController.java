@@ -16,7 +16,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ViewStoreSalesOverviewController {
-
     @FXML
     private TableView<StoreSalesOverview> tableStoreSalesOverview;
     @FXML
