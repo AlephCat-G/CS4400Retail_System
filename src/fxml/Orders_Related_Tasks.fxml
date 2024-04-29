@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrdersRelatedTasksController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 10;">
+    <Label text="Order-Related Tasks" style="-fx-font-size: 24px;" />
+    <Button text="Begin Order" minWidth="200" onAction="#handleBeginOrder" />
+    <Button text="Add Order Line" minWidth="200" onAction="#handleAddOrderLine" />
+    <Button text="Deliver Order" minWidth="200" onAction="#handleDeliverOrder" />
+    <Button text="Cancel Order" minWidth="200" onAction="#handleCancelOrder" />
+    <Button text="Cancel" minWidth="200" onAction="#handleCancel"/>
+</VBox>

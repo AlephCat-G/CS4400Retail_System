@@ -30,8 +30,11 @@ public class MainDashboardController {
 
     @FXML
     private void handleProductsAction() {
-        // TODO: Implement view switching logic
-        switchView("fxml/ProductsView.fxml");
+        try {
+            Main.switchToView("/fxml/Product_Related_Tasks.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -54,14 +57,20 @@ public class MainDashboardController {
 
     @FXML
     private void handleOrdersAction() {
-        // TODO: Implement view switching logic
-        switchView("fxml/OrdersView.fxml");
+        try {
+            Main.switchToView("/fxml/Orders_Related_Tasks.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleViewsAction() {
-        // TODO: Implement view switching logic
-        switchView("fxml/ViewsView.fxml");
+        try {
+            Main.switchToView("/fxml/Views_Related_Tasks.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void switchView(String fxmlFile) {
