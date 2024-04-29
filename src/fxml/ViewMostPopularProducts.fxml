@@ -6,14 +6,32 @@
 <?import javafx.scene.control.Button?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewMostPopularProductsController" spacing="10" alignment="TOP_CENTER">
-    <TableView fx:id="tableMostPopularProducts">
+    <TableView fx:id="tableMostPopularProducts" editable="false">
         <columns>
-            <TableColumn fx:id="columnBarcode" text="Barcode" minWidth="200">
-                <cellValueFactory>
-                    <PropertyValueFactory property="barcode" />
-                </cellValueFactory>
+            <TableColumn fx:id="columnBarcode" text="Barcode" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="barcode" /></cellValueFactory>
             </TableColumn>
-            <!-- Add other columns for product_name, weight, etc., similar to the columnBarcode definition above -->
+            <TableColumn fx:id="columnProductName" text="Product Name" minWidth="200">
+                <cellValueFactory><PropertyValueFactory property="productName" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnWeight" text="Weight" minWidth="50">
+                <cellValueFactory><PropertyValueFactory property="weight" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnLowestPrice" text="Lowest Price" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="lowestPrice" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnHighestPrice" text="Highest Price" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="highestPrice" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnLowestQuantity" text="Lowest Quantity" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="lowestQuantity" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnHighestQuantity" text="Highest Quantity" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="highestQuantity" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnTotalQuantity" text="Total Quantity" minWidth="100">
+                <cellValueFactory><PropertyValueFactory property="totalQuantity" /></cellValueFactory>
+            </TableColumn>
         </columns>
     </TableView>
     <Button text="Cancel" minWidth="100" onAction="#handleCancel" />

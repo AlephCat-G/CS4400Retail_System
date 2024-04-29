@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDronePilotRosterController" spacing="10" alignment="TOP_CENTER">
+    <TableView fx:id="tableDronePilotRoster" editable="false">
+        <columns>
+            <TableColumn fx:id="columnPilot" text="Pilot" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="pilot" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnLicenseID" text="LicenseID" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="licenseID" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnDroneServesStore" text="Drone Serves Store" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="droneServesStore" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnDroneTag" text="Drone Tag" minWidth="50">
+                <cellValueFactory>
+                    <PropertyValueFactory property="droneTag" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnSuccessfulDeliveries" text="Successful Deliveries" minWidth="50">
+                <cellValueFactory>
+                    <PropertyValueFactory property="successfulDeliveries" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnPendingDeliveries" text="Pending Deliveries" minWidth="50">
+                <cellValueFactory>
+                    <PropertyValueFactory property="pendingDeliveries" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Cancel" minWidth="100" onAction="#handleCancel" />
+</VBox>

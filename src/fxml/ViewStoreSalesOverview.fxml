@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewStoreSalesOverviewController" spacing="10" alignment="TOP_CENTER">
+    <TableView fx:id="tableStoreSalesOverview" editable="false">
+        <columns>
+            <TableColumn fx:id="columnStoreId" text="Store ID" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="storeId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnSname" text="Store Name" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sname" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnManager" text="Manager" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="manager" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnRevenue" text="Revenue" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="revenue" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnIncomingRevenue" text="Incoming Revenue" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="incomingRevenue" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnIncomingOrders" text="Incoming Orders" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="incomingOrders" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Cancel" minWidth="100" onAction="#handleCancel" />
+</VBox>

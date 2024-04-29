@@ -21,12 +21,31 @@ public class ViewMostPopularProductsController {
     private TableView<MostPopularProduct> tableMostPopularProducts;
     @FXML
     private TableColumn<MostPopularProduct, String> columnBarcode;
-    // Add other TableColumn attributes for product_name, weight, etc.
+    @FXML
+    private TableColumn<MostPopularProduct, String> columnProductName;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnWeight;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnLowestPrice;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnHighestPrice;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnLowestQuantity;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnHighestQuantity;
+    @FXML
+    private TableColumn<MostPopularProduct, Integer> columnTotalQuantity;
 
     @FXML
     public void initialize() {
         columnBarcode.setCellValueFactory(new PropertyValueFactory<>("barcode"));
-        // Initialize other TableColumn attributes similarly
+        columnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        columnWeight.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        columnLowestPrice.setCellValueFactory(new PropertyValueFactory<>("lowestPrice"));
+        columnHighestPrice.setCellValueFactory(new PropertyValueFactory<>("highestPrice"));
+        columnLowestQuantity.setCellValueFactory(new PropertyValueFactory<>("lowestQuantity"));
+        columnHighestQuantity.setCellValueFactory(new PropertyValueFactory<>("highestQuantity"));
+        columnTotalQuantity.setCellValueFactory(new PropertyValueFactory<>("totalQuantity"));
 
         try {
             loadMostPopularProductsData();
@@ -36,7 +55,6 @@ public class ViewMostPopularProductsController {
         }
     }
 
-    // Change SortedList<Object> to ObservableList<MostPopularProduct>
     private void loadMostPopularProductsData() throws SQLException {
         ObservableList<MostPopularProduct> data = FXCollections.observableArrayList();
         Connection conn = DatabaseConnector.getConnection();
@@ -53,7 +71,9 @@ public class ViewMostPopularProductsController {
             int lowestQuantity = rs.getInt("lowest_quantity");
             int highestQuantity = rs.getInt("highest_quantity");
             int totalQuantity = rs.getInt("total_quantity");
-            data.add(new MostPopularProduct(barcode, productName, weight, lowestPrice, highestPrice, lowestQuantity, highestQuantity, totalQuantity));
+
+            data.add(new MostPopularProduct(barcode, productName, weight,
+                    lowestPrice, highestPrice, lowestQuantity, highestQuantity, totalQuantity));
         }
 
         tableMostPopularProducts.setItems(data);
@@ -61,7 +81,6 @@ public class ViewMostPopularProductsController {
         stmt.close();
         conn.close();
     }
-
 
     @FXML
     private void handleCancel() {
