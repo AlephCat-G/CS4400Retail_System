@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewRoleDistributionController" spacing="10" alignment="TOP_CENTER">
+    <TableView fx:id="tableRoleDistribution" editable="false">
+        <columns>
+            <TableColumn fx:id="columnCategory" text="Category" minWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="category" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="columnTotal" text="Total" minWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="total" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Cancel" minWidth="100" onAction="#handleCancel" />
+</VBox>
