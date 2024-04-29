@@ -13,7 +13,6 @@ public class CustomerRelatedTasksController {
 
     @FXML
     private void handleIncreaseCredits() throws Exception {
-        // Logic to switch to the Increase Customer Credits View
         Main.switchToView("/fxml/IncreaseCredit.fxml");
     }
 
@@ -28,7 +27,6 @@ public class CustomerRelatedTasksController {
     @FXML
     private void handleCancel() {
         try {
-            // This will switch the view back to the MainDashboard.fxml view
             Main.switchToView("/fxml/MainDashboard.fxml");
         } catch (Exception e) {
             e.printStackTrace();

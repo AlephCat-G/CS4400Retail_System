@@ -44,11 +44,9 @@ public class IncreaseCreditController {
         tfUsername.clear();
         tfAmount.clear();
         try {
-            // This will switch the view back to the MainDashboard.fxml view
             Main.switchToView("/fxml/Customer_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Here you can log the error or show an error message to the user
         }
     }
 }

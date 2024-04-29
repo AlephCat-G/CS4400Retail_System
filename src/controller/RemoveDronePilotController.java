@@ -29,7 +29,6 @@ public class RemoveDronePilotController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exception, potentially update GUI with error message
         }
     }
 

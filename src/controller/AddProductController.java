@@ -19,7 +19,7 @@ public class AddProductController {
     private void handleAddProduct() {
         String barcode = tfBarcode.getText();
         String name = tfName.getText();
-        double weight = Double.parseDouble(tfWeight.getText()); // 这里假设用户总是输入有效的数字
+        double weight = Double.parseDouble(tfWeight.getText());
 
         try (Connection conn = DatabaseConnector.getConnection()) {
             String call = "{call add_product(?, ?, ?)}";
@@ -38,11 +38,9 @@ public class AddProductController {
     @FXML
     private void handleCancel() {
         try {
-            // This will switch the view back to the MainDashboard.fxml view
             Main.switchToView("/fxml/Product_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Here you can log the error or show an error message to the user
         }
     }
 }

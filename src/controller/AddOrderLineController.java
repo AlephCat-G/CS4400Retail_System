@@ -23,8 +23,8 @@ public class AddOrderLineController {
     private void handleAddOrderLine() {
         String orderID = tfOrderID.getText();
         String productBarcode = tfProductBarcode.getText();
-        double productPrice = Double.parseDouble(tfProductPrice.getText());  // Assumes valid numeric input
-        int productQuantity = Integer.parseInt(tfProductQuantity.getText()); // Assumes valid numeric input
+        double productPrice = Double.parseDouble(tfProductPrice.getText());
+        int productQuantity = Integer.parseInt(tfProductQuantity.getText());
 
         try (Connection conn = DatabaseConnector.getConnection()) {
             String call = "{call add_order_line(?, ?, ?, ?)}";
@@ -38,18 +38,15 @@ public class AddOrderLineController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exception, potentially update GUI with error message
         }
     }
 
     @FXML
     private void handleCancel() {
         try {
-            // Optionally switch the view back to another screen or clear the fields
             Main.switchToView("/fxml/Orders_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle error, possibly show an error message to the user
         }
     }
 }

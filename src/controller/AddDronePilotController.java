@@ -31,7 +31,7 @@ public class AddDronePilotController {
         String firstName = tfFirstName.getText();
         String lastName = tfLastName.getText();
         String address = tfAddress.getText();
-        Date birthdate = Date.valueOf(tfBirthdate.getText()); // This assumes the input is in the format "YYYY-MM-DD"
+        Date birthdate = Date.valueOf(tfBirthdate.getText());
         String taxID = tfTaxID.getText();
         int service = Integer.parseInt(tfService.getText());
         int salary = Integer.parseInt(tfSalary.getText());
@@ -53,11 +53,9 @@ public class AddDronePilotController {
                 stmt.setInt(10, experience);
                 stmt.execute();
                 System.out.println("Drone Pilot added successfully");
-                // You may want to clear the text fields or show a confirmation message here.
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // You may want to show an error message dialog here.
         }
     }
 

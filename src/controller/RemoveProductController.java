@@ -29,18 +29,15 @@ public class RemoveProductController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exception, potentially update GUI with error message
         }
     }
 
     @FXML
     private void handleCancel() {
         try {
-            // Optionally switch the view back to another screen or clear the fields
             Main.switchToView("/fxml/Product_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle error, possibly show an error message to the user
         }
     }
 }

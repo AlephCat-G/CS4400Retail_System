@@ -58,11 +58,9 @@ public class BeginOrderController {
     @FXML
     private void handleCancel() {
         try {
-            // This will switch the view back to the previous dashboard or view
             Main.switchToView("/fxml/Orders_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Here you can log the error or show an error message to the user
         }
     }
 }

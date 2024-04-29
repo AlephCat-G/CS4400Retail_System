@@ -35,7 +35,6 @@ public class DroneRelatedTasksController {
     @FXML
     private void handleCancel() {
         try {
-            // This will switch the view back to the MainDashboard.fxml view
             Main.switchToView("/fxml/MainDashboard.fxml");
         } catch (Exception e) {
             e.printStackTrace();
