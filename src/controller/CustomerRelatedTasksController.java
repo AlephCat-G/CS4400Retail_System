@@ -14,13 +14,13 @@ public class CustomerRelatedTasksController {
     @FXML
     private void handleIncreaseCredits() throws Exception {
         // Logic to switch to the Increase Customer Credits View
-        Main.switchToView("IncreaseCustomerCreditsView.fxml");
+        Main.switchToView("/fxml/IncreaseCredit.fxml");
     }
 
     @FXML
     private void handleViewCreditCheck() throws Exception {
         // Logic to switch to the View Customer Credit Check View
-        Main.switchToView("ViewCustomerCreditCheckView.fxml");
+        Main.switchToView("ViewCustomerCreditCheck.fxml");
     }
 
     @FXML

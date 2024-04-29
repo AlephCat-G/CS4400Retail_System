@@ -15,7 +15,7 @@ public class DroneRelatedTasksController {
     @FXML
     private void handleRepairAndRefuelDrone() throws Exception {
         System.out.println("Attempting to repair and refuel drone...");
-        Main.switchToView("/fxml/RepairAndRefuelDroneView.fxml");
+        Main.switchToView("/fxml/RepairRefuelDrone.fxml");
     }
 
     @FXML
@@ -27,7 +27,7 @@ public class DroneRelatedTasksController {
     @FXML
     private void handleViewDroneTrafficControl() throws Exception {
         System.out.println("Attempting to view drone traffic control...");
-        Main.switchToView("/fxml/ViewDroneTrafficControlView.fxml");
+        Main.switchToView("ViewDroneTrafficControl.fxml");
     }
 
 
