@@ -59,7 +59,7 @@ public class BeginOrderController {
     private void handleCancel() {
         try {
             // This will switch the view back to the previous dashboard or view
-            Main.switchToView("/fxml/MainDashboard.fxml");
+            Main.switchToView("/fxml/Product_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
             // Here you can log the error or show an error message to the user
