@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.BeginOrder"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BeginOrderController">
+    <VBox spacing="10" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" maxWidth="300">
+        <Label text="Begin Order" style="-fx-font-size: 16;" />
+        <TextField fx:id="tfOrderID" promptText="Order ID"/>
+        <TextField fx:id="tfSoldOn" promptText="Sold On (YYYY-MM-DD)"/>
+        <TextField fx:id="tfPurchasedBy" promptText="Purchased By"/>
+        <TextField fx:id="tfCarrierStore" promptText="Carrier Store"/>
+        <TextField fx:id="tfCarrierTag" promptText="Carrier Tag"/>
+        <TextField fx:id="tfProductBarcode" promptText="Product Barcode"/>
+        <TextField fx:id="tfProductPrice" promptText="Product Price"/>
+        <TextField fx:id="tfProductQuantity" promptText="Product Quantity"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Confirm" fx:id="btnConfirm" onAction="#handleBeginOrder"/>
+            <Button text="Cancel" fx:id="btnCancel" onAction="#handleCancel"/>
+        </HBox>
+    </VBox>
 </AnchorPane>
+
+
