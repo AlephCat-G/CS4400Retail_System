@@ -36,7 +36,11 @@ public class BeginOrderController {
             String call = "{call begin_order(?, ?, ?, ?, ?, ?, ?, ?)}";
             try (CallableStatement cstmt = conn.prepareCall(call)) {
                 cstmt.setString(1, orderID);
-                cstmt.setString(2, soldOn);
+                if (soldOn != null) {
+                    cstmt.setDate(2, java.sql.Date.valueOf(soldOn));
+                } else {
+                    cstmt.setNull(2, java.sql.Types.DATE);
+                }
                 cstmt.setString(3, purchasedBy);
                 cstmt.setString(4, carrierStore);
                 cstmt.setString(5, carrierTag);
