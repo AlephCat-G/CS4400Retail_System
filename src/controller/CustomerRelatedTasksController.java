@@ -17,17 +17,14 @@ public class CustomerRelatedTasksController {
         Main.switchToView("/fxml/IncreaseCredit.fxml");
     }
 
-    @FXML
-    private void handleViewCreditCheck() throws Exception {
-        // Logic to switch to the View Customer Credit Check View
-        Main.switchToView("ViewCustomerCreditCheck.fxml");
-    }
 
     @FXML
     private void handleRemoveCustomer() throws Exception {
-        // Logic to switch to the Remove Customer View
-        Main.switchToView("RemoveCustomerView.fxml");
+        System.out.println("Attempting to remove a customer...");
+        Main.switchToView("/fxml/RemoveCustomer.fxml");
     }
+
+
     @FXML
     private void handleCancel() {
         try {

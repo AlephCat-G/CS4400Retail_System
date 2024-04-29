@@ -7,7 +7,6 @@
     <Button text="Add Drone" minWidth="200" onAction="#handleAddDrone" />
     <Button text="Swap Drone Control" minWidth="200" onAction="#handleSwapDroneControl" />
     <Button text="Repair and Refuel Drone" minWidth="200" onAction="#handleRepairAndRefuelDrone" />
-    <Button text="View Drone Traffic Control" minWidth="200" onAction="#handleViewDroneTrafficControl" />
     <Button text="Remove Drone" minWidth="200" onAction="#handleRemoveDrone" />
     <Button text="Cancel" minWidth="200" onAction="#handleCancel"/>
 </VBox>

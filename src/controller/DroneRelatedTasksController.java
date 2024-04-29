@@ -24,17 +24,12 @@ public class DroneRelatedTasksController {
         Main.switchToView("/fxml/AddDrone.fxml");
     }
 
-    @FXML
-    private void handleViewDroneTrafficControl() throws Exception {
-        System.out.println("Attempting to view drone traffic control...");
-        Main.switchToView("ViewDroneTrafficControl.fxml");
-    }
 
 
     @FXML
     private void handleRemoveDrone() throws Exception {
         System.out.println("Attempting to remove a drone...");
-        Main.switchToView("/fxml/RemoveDroneView.fxml");
+        Main.switchToView("/fxml/RemoveDrone.fxml");
     }
 
     @FXML

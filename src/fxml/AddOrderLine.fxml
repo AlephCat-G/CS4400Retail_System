@@ -6,25 +6,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<?import javafx.scene.control.DatePicker?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BeginOrderController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddOrderLineController">
     <VBox spacing="10" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" maxWidth="300">
-        <Label text="Begin Order" style="-fx-font-size: 16;" />
+        <Label text="Add Order Line" style="-fx-font-size: 16;" />
         <TextField fx:id="tfOrderID" promptText="Order ID"/>
-        <DatePicker fx:id="dpSoldOn" promptText="Sold On (YYYY-MM-DD)"/>
-        <TextField fx:id="tfPurchasedBy" promptText="Purchased By"/>
-        <TextField fx:id="tfCarrierStore" promptText="Carrier Store"/>
-        <TextField fx:id="tfCarrierTag" promptText="Carrier Tag"/>
         <TextField fx:id="tfProductBarcode" promptText="Product Barcode"/>
         <TextField fx:id="tfProductPrice" promptText="Product Price"/>
         <TextField fx:id="tfProductQuantity" promptText="Product Quantity"/>
         <HBox spacing="10" alignment="CENTER">
-            <Button text="Confirm" fx:id="btnConfirm" onAction="#handleBeginOrder"/>
+            <Button text="Add" fx:id="btnAdd" onAction="#handleAddOrderLine"/>
             <Button text="Cancel" fx:id="btnCancel" onAction="#handleCancel"/>
         </HBox>
     </VBox>
 </AnchorPane>
-
-
-
 

@@ -8,11 +8,6 @@ public class PilotRelatedTasksController {
         Main.switchToView("/fxml/AddDronePilot.fxml");
     }
 
-    @FXML
-    private void handleViewDronePilotRoster() throws Exception {
-        System.out.println("Attempting to view drone pilot roster...");
-        Main.switchToView("/fxml/ViewDronePilotRoster.fxml");
-    }
 
     @FXML
     private void handleRemoveDronePilot() throws Exception {

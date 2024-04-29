@@ -1,5 +1,6 @@
 package controller;
 
+import application.Main;
 import database.DatabaseConnector;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -36,9 +37,13 @@ public class SwapDroneControlController {
 
     @FXML
     private void handleCancel() {
-        tfIncomingPilot.clear();
-        tfOutgoingPilot.clear();
-        System.out.println("Operation cancelled.");
+        try {
+            // This will switch the view back to the MainDashboard.fxml view
+            Main.switchToView("/fxml/Drone_Related_Tasks.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Here you can log the error or show an error message to the user
+        }
     }
 }
 

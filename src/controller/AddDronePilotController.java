@@ -24,14 +24,6 @@ public class AddDronePilotController {
     @FXML private Button btnCancel;
     @FXML private Button btnAdd;
 
-    @FXML
-    private void handleCancel() {
-        try {
-            Main.switchToView("/fxml/MainDashboard.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     private void handleAddDronePilot() {
@@ -66,6 +58,15 @@ public class AddDronePilotController {
         } catch (SQLException e) {
             e.printStackTrace();
             // You may want to show an error message dialog here.
+        }
+    }
+
+    @FXML
+    private void handleCancel() {
+        try {
+            Main.switchToView("/fxml/Pilots_Related_Tasks.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

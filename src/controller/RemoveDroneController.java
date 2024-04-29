@@ -3,48 +3,47 @@ package controller;
 import application.Main;
 import database.DatabaseConnector;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.CallableStatement;
 
-public class RepairRefuelDroneController {
-    @FXML private TextField tfDroneStore;
+public class RemoveDroneController {
+
+    @FXML private TextField tfStoreID;
     @FXML private TextField tfDroneTag;
-    @FXML private TextField tfRefueledTrips;
-    @FXML private Button btnRefuel;
     @FXML private Button btnCancel;
+    @FXML private Button btnRemove;
 
     @FXML
-    private void handleRefuel() {
-        String droneStore = tfDroneStore.getText();
+    private void handleRemoveDrone() {
+        String storeID = tfStoreID.getText();
         String droneTag = tfDroneTag.getText();
-        int refueledTrips = Integer.parseInt(tfRefueledTrips.getText());
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-            String call = "{call repair_refuel_drone(?, ?, ?)}";
+            String call = "{call remove_drone(?, ?)}";
             try (CallableStatement cstmt = conn.prepareCall(call)) {
-                cstmt.setString(1, droneStore);
+                cstmt.setString(1, storeID);
                 cstmt.setString(2, droneTag);
-                cstmt.setInt(3, refueledTrips);
                 cstmt.executeUpdate();
-                System.out.println("Drone refueled successfully at store: " + droneStore);
+                System.out.println("Drone removed successfully from store: " + storeID);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Here you can log the error or show an error message to the user
+            // Handle exception, potentially update GUI with error message
         }
     }
 
     @FXML
     private void handleCancel() {
         try {
-            // This will switch the view back to the MainDashboard.fxml view
+            // Optionally switch the view back to another screen or clear the fields
             Main.switchToView("/fxml/Drone_Related_Tasks.fxml");
         } catch (Exception e) {
             e.printStackTrace();
-            // Here you can log the error or show an error message to the user
+            // Handle error, possibly show an error message to the user
         }
     }
 }
