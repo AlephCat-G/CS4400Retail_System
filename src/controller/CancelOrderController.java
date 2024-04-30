@@ -6,9 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.CallableStatement;
+import java.sql.*;
 
 public class CancelOrderController {
 

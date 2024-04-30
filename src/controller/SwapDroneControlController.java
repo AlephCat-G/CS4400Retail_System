@@ -3,12 +3,13 @@ package controller;
 import application.Main;
 import database.DatabaseConnector;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.CallableStatement;
+import java.sql.SQLException;
 
 public class SwapDroneControlController {
 
@@ -27,11 +28,15 @@ public class SwapDroneControlController {
             try (CallableStatement cstmt = conn.prepareCall(call)) {
                 cstmt.setString(1, incomingPilot);
                 cstmt.setString(2, outgoingPilot);
-                cstmt.executeUpdate();
-                System.out.println("Drone control swapped successfully from " + outgoingPilot + " to " + incomingPilot);
+                int rowsAffected = cstmt.executeUpdate();
+                if (rowsAffected > 0) {
+                    showAlert("Success", "Drone control swapped successfully from " + outgoingPilot + " to " + incomingPilot, Alert.AlertType.INFORMATION);
+                } else {
+                    showAlert("Error", "No action taken. Check pilot usernames and ensure they are assigned to a drone.", Alert.AlertType.ERROR);
+                }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            showAlert("Database Error", "An unexpected SQL error has occurred: " + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
@@ -43,5 +48,12 @@ public class SwapDroneControlController {
             e.printStackTrace();
         }
     }
-}
 
+    private void showAlert(String title, String message, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+}

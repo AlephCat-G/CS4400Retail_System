@@ -3,11 +3,12 @@ package controller;
 import application.Main;
 import database.DatabaseConnector;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
-
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.CallableStatement;
+import java.sql.SQLException;
 
 public class AddDroneController {
 
@@ -33,14 +34,19 @@ public class AddDroneController {
                 cstmt.setInt(3, capacity);
                 cstmt.setInt(4, remainingTrips);
                 cstmt.setString(5, pilot);
-                cstmt.executeUpdate();
-                System.out.println("Drone added successfully");
+
+                int affectedRows = cstmt.executeUpdate();
+                if (affectedRows == 0) {
+                    showAlert("Error", "No drone was added. Possible duplicate entry or other constraints violation.", AlertType.ERROR);
+                } else {
+                    showAlert("Success", "Drone added successfully.", AlertType.INFORMATION);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Database Error", "An unexpected SQL error has occurred.", AlertType.ERROR);
         }
     }
-
 
     @FXML
     private void handleCancel() {
@@ -49,5 +55,13 @@ public class AddDroneController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void showAlert(String title, String message, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
